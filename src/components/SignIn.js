@@ -9,7 +9,7 @@ const SignIn = () => {
     }
   return (
     <>
-        <button onClick={signIn}>Sign In</button>
+        <button className='SignBtn' onClick={signIn}>Sign In</button>
     </>
   )
 }

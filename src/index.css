@@ -1,13 +1,185 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://i.pinimg.com/originals/6f/76/2a/6f762aa0ea0d0a423d9f8f20b9d0cd80.jpg');
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.SignBtn{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%);
+  padding: 20px 30px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  background-color: beige;
+  transition: .6s;
+  z-index: 1;
+}
+.SignBtn:hover{
+  background-color: rgb(165, 165, 148);
+}
+.SignBtn:active{
+  transform: scale(.9);
+}
+.SignBtn.out{
+  top: 50px;
+  left: 100px;
+}
+.msg{
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 20px;
+  margin: 10px;
+  color: white;
+}
+.msg p{
+  overflow-x: auto;
+  word-break: break-all;
+  font-size: 20px;
+}
+
+.msg img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.chat{
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+.msgs{
+  display: flex;  
+  flex-direction: column;
+  width: 600px;
+  margin: 50px auto;
+  margin-bottom: 0px;
+  background-color: rgba(123, 92, 153, 0.171);
+  padding: 10px;
+  border-radius: 20px;
+  height: 650px;
+  overflow-y:auto;
+}
+
+.msgCont{
+  display: flex;
+}
+.msgCont.user{
+  justify-content: flex-end;
+}
+.msgCont.other{
+  justify-content: flex-start;
+}
+.msg.user{
+  text-align: start;
+  border-radius: 30px 15px 30px 30px;
+  align-items: center;
+  background-color: rgb(87, 60, 92);
+}
+.msg.other{
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  border-radius: 15px 30px  30px 30px;
+  align-items: center;
+  background-color: rgb(79, 64, 82);
+
+}
+.msg.other p{
+  margin-left: 5px;
+}
+.msg.user p{
+  margin-right: 5px;
+}
+.sndMsg{
+  width: 600px;
+  height: 60px;
+  margin: 10px auto;
+  position: relative;
+  background-color: rgba(185, 104, 201, 0.212);
+  border-radius: 50px;
+}
+.sndMsg input{
+  width: 400px;
+  height: 30px;
+  padding: 5px 0;
+  padding-left: 25px;
+  margin-top: 5px;
+  margin-left: 30px;
+  color: white;
+  font-size: 20px;
+  border: 0;
+  border-bottom: 1px solid white;
+  outline: 0;
+  background-color: transparent;
+}
+.sndBtn{
+  position: absolute;
+  background-color: transparent;
+  cursor: pointer;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  color: blueviolet;
+  border: 0;
+  font-size: 30px;
+}
+.sndBtn:hover{
+  color: aquamarine;
+}
+@media(max-width:440px) {
+  body{
+    background-size: 2000px;
+    background-position: center;
+  }
+  .chatContainer{
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .msgs{
+    display: flex;  
+    flex-direction: column;
+    width: 100%;
+    margin: 100px auto;
+    background-color: rgba(122, 92, 153, 0);
+    border-radius: 10px;
+    height: 100%;
+    padding: 0;
+    overflow-y:auto;
+  }
+  .msg p{
+    font-size: 14px;
+  }
+  .SignBtn.out{
+    top: 20px;
+  }
+  .sndMsg{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    margin: 0;
+    height: 50px;
+    background-color: rgb(185, 104, 201);
+    width: 100%;
+    border-radius: 0;
+  }
+  .sndMsg input{
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
