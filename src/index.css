@@ -1,12 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
-
-body{
+*{
   margin: 0;
+
+  box-sizing: border-box;
+  
+}
+body{
+  overflow: hidden;
+}
+.App{
+  position: relative;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: auto;
+  width: 100%;
+  padding: 100px 0;
+  font-family: 'Lato', sans-serif;
+  z-index: 2;
+}
+.backgroundImg{
+  position: absolute;
+  top: 0;
+  left: 0;
   background-image: url('https://i.pinimg.com/originals/6f/76/2a/6f762aa0ea0d0a423d9f8f20b9d0cd80.jpg');
   background-size: cover;
-  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
-
+.backgroundImg::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(11, 3, 19, 0.685);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 .SignBtn{
   position: absolute;
   top:50%;
@@ -55,15 +86,15 @@ body{
 }
 .chat{
   margin: 0 auto;
-  width: auto;
+  width: 600px;
   height: auto;
   position: relative;
 }
 .msgs{
   display: flex;  
   flex-direction: column;
-  width: 600px;
-  margin: 50px auto;
+  width: 100%;
+  margin: 0 auto;
   margin-bottom: 0px;
   background-color: rgba(123, 92, 153, 0.171);
   padding: 10px;
@@ -111,7 +142,7 @@ body{
 }
 .sndMsg input{
   width: 400px;
-  height: 30px;
+  height: 100%;
   padding: 5px 0;
   padding-left: 25px;
   margin-top: 5px;
@@ -138,14 +169,38 @@ body{
 .sndBtn:hover{
   color: aquamarine;
 }
+.ToBottom{
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  right: 25px;
+  color: blueviolet;
+  cursor: pointer;
+  background-color:rgb(79, 64, 82);
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0.8;
+  z-index: 2;
+}
 @media(max-width:440px) {
+  .ToBottom{
+    position: fixed;
+    bottom: 70px;
+  }
   body{
-    background-size: 2000px;
+    overflow: auto;
+  }
+  .App{
+    padding: 1px 0;
+  }
+  .backgroundImg{
+    background-image: url('https://w0.peakpx.com/wallpaper/680/439/HD-wallpaper-synthwave-synth-wave.jpg');
+    background-size: contain;
     background-position: center;
   }
-  .chatContainer{
-    height: 100%;
-    margin-bottom: 0;
+  
+  .chat{
+    width: auto;
   }
   .msgs{
     display: flex;  
